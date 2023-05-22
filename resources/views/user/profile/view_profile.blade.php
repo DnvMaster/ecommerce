@@ -6,7 +6,7 @@
         <div class="card-body">
             <h5 class="card-title">Имя пользователя : {{ $user->name }}</h5>
             <p class="card-text">Эл. почта пользователя : {{ $user->email }}</p>
-            <a href="#" class="btn btn-primary">Редактировать профиль</a>
+            <a href="{{ route('profile.edit') }}" class="btn btn-primary">Редактировать профиль</a>
         </div>
     </div>
 @endsection
