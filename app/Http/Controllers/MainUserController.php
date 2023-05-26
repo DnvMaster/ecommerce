@@ -40,6 +40,10 @@ class MainUserController extends Controller
             $data['profile_photo_path'] = $filename;
         }
         $data->save();
-        return redirect()->route('user.profile');
+        $notification = [
+            'message' => 'Профиль пользователя успешно обновлён',
+            'alert-type '=> 'success',
+        ];
+        return redirect()->route('user.profile')->with($notification);
     }
 }
