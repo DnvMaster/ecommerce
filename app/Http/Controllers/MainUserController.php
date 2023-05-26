@@ -46,4 +46,12 @@ class MainUserController extends Controller
         ];
         return redirect()->route('user.profile')->with($notification);
     }
+    public function UserPasswordView()
+    {
+        return view('user.password.edit_password');
+    }
+    public function UserPasswordUpdate(Request $request)
+    {
+        //
+    }
 }
