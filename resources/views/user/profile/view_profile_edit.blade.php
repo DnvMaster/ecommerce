@@ -1,10 +1,10 @@
 @extends('user.user_master')
 @section('user')
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <div class="row" style="padding: 20px;">
         <div class="col-md-6">
-            <form>
+            <form action="{{ route('profile.store') }}" enctype="multipart/form-data" method="post">
 			@csrf
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Имя пользователя</label>
@@ -16,14 +16,10 @@
                 </div>
                 <div class="mb-3">
                     <label for="formFile" class="form-label">Фото профиля</label>
-                    <input class="form-control" type="file" id="Image">
+                    <input class="form-control" name="profile_photo_path" type="file" id="Image">
                 </div>
                 <div class="mb-3">
                     <img id="showImage" src="{{ (!empty($user->profile_photo_path)) ? url('upload/user_images/'.$user->profile_photo_path) : url('upload/no_image.jpg') }}" style="width: 100px; height: 100px;">
-                </div>
-                <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Обновить</button>

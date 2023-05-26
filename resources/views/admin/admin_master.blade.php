@@ -27,7 +27,6 @@
     <!-- Meta -->
     <meta name="description" content="Premium Quality and Responsive UI for Dashboard.">
     <meta name="author" content="ThemePixels">
-	<meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Laravel 8 Multiple Authentificate Admin & User</title>
 
